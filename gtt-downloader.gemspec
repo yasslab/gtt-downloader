@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'gtt_downloader/version'
+require 'gtt/downloader/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "gtt_downloader"
-  spec.version       = GttDownloader::VERSION
+  spec.name          = "gtt-downloader"
+  spec.version       = Gtt::Downloader::VERSION
   spec.authors       = ["Seiei Miyagi"]
   spec.email         = ["hanachin@gmail.com"]
 
   spec.summary       = %q{Download archive.zip from Google Translator Toolkit.}
-  spec.homepage      = "https://github.com/yasslab/gtt_downloader"
+  spec.homepage      = "https://github.com/yasslab/gtt-downloader"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

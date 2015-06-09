@@ -1,4 +1,4 @@
-# GttDownloader
+# Gtt::Downloader
 
 Download archive.zip from Google Translator Toolkit.
 
@@ -7,7 +7,7 @@ Download archive.zip from Google Translator Toolkit.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'gtt_downloader'
+gem 'gtt-downloader'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install gtt_downloader
+    $ gem install gtt-downloader
 
 ## Usage
 
-    $ gtt_downloader LABEL="example"
+    $ gtt-downloader LABEL="example"
 
 ## Development
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/yasslab/gtt_downloader. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/yasslab/gtt-downloader. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 
 ## License
