@@ -24,7 +24,7 @@ Gtt::Downloader requires chromdriver:
 
 ## Usage
 
-    $ LABEL="example" gtt-downloader
+    $ LABEL="example" GMAIL_ADDR="your gmail address" GMAIL_PASS="your gmail pass" gtt-downloader
 
 ## TODO
 
