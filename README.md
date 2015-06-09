@@ -28,7 +28,7 @@ Gtt::Downloader requires chromdriver:
 
 ## TODO
 
-- [ ] download archive.zip(multiple files)
+- [x] download archive.zip(multiple files)
 - [ ] download single file
 
 ## Development
