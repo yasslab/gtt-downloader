@@ -1,5 +1,5 @@
 module Gtt
-  module Downloader
+  class Downloader
     VERSION = "0.1.0"
   end
 end

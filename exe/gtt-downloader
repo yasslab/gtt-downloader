@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "gtt/downloader"
+
+unless ENV['LABEL']
+  puts <<USAGE
+Usage: gtt-downloader LABEL="example"
+USAGE
+  exit 0
+end
+
+downloader   = Gtt::Downloader.new
+label        = ENV['LABEL']
+archive_path = downloader.download_label(label)
+puts archive_path

@@ -18,9 +18,13 @@ Or install it yourself as:
 
     $ gem install gtt-downloader
 
+Gtt::Downloader requires chromdriver:
+
+    $ brew install chromedriver
+
 ## Usage
 
-    $ gtt-downloader LABEL="example"
+    $ LABEL="example" gtt-downloader
 
 ## TODO
 
