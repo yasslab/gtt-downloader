@@ -87,7 +87,7 @@ module Gtt
     end
 
     def wait_time
-      60
+      600
     end
   end
 end
