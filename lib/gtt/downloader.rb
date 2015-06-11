@@ -24,6 +24,15 @@ module Gtt
         # FIXME ラベルが選択されアイテムが表示されるのを待つ
         sleep 10
 
+        # リストにフォーカスを当てておく
+        session.find('.gtc-list-body tr:first-child .gtc-listview-col-checkbox .jfk-checkbox').click
+        session.find('.gtc-list-body tr:first-child .gtc-listview-col-checkbox .jfk-checkbox').click
+
+        # 全部表示する
+        while session.first('#item-count', text: 'of many')
+          session.find('body').native.send_key(:arrow_down)
+        end
+
         session.find('#select-menu-button').click
         # FIXME ファイルが選択されるのを待つ
         sleep 10
