@@ -82,7 +82,7 @@ module Gtt
       session.visit(::Gtt::URL)
       session.fill_in 'Email',  with: @email
       session.fill_in 'Passwd', with: @password
-      session.click_on 'ログイン'
+      session.click_on 'signIn'
       session
     end
 
