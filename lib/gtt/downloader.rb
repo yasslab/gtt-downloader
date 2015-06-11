@@ -37,8 +37,10 @@ module Gtt
         end
       end
     ensure
-      session.cleanup!
-      session.driver.quit
+      if session
+        session.cleanup!
+        session.driver.quit
+      end
     end
 
     private
