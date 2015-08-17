@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require "gtt/downloader/version"
 require "capybara"
 
@@ -89,8 +90,9 @@ module Gtt
     def signed_in_session
       session = Capybara::Session.new(gtt_driver)
       session.visit(::Gtt::URL)
-      session.fill_in 'Email',  with: @email
-      session.fill_in 'Passwd', with: @password
+      session.fill_in  'Email',  with: @email
+      session.click_on 'Next' if session.has_button? "Next"
+      session.fill_in  'Passwd', with: @password
       session.click_on 'signIn'
       session
     end
