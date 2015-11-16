@@ -13,4 +13,5 @@ end
 downloader   = Gtt::Downloader.new
 label        = ENV['LABEL']
 archive_path = downloader.download_label(label)
-FileUtils.mv(archive_path, File.join(FileUtils.pwd, 'archive.zip'))
+filename     = File.basename(archive_path).gsub(/ \(\d+\)(\.[^.]+)$/) { $1 }
+FileUtils.mv(archive_path, File.join(FileUtils.pwd, filename))
