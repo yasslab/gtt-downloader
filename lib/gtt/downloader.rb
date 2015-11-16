@@ -38,7 +38,13 @@ module Gtt
         # FIXME ファイルが選択されるのを待つ
         sleep 10
 
-        archive_path_helper do
+        if session.first('#item-count', text: '1-1 of 1')
+          filename = session.first('.gtc-list-row-select .gtc-listview-doc-col-name > div:first-child').text
+        else
+          filename = nil
+        end
+
+        archive_path_helper(filename: filename) do
           session.find('#download-button').click
           # FIXME ダウンロードを待つ
           begin
@@ -55,12 +61,12 @@ module Gtt
 
     private
 
-    def archive_path_helper(&action)
-      previous_archive_paths = archive_paths
+    def archive_path_helper(filename: nil, &action)
+      previous_archive_paths = archive_paths(filename)
 
       action.call
 
-      downloaded_archive_paths = archive_paths - previous_archive_paths
+      downloaded_archive_paths = archive_paths(filename) - previous_archive_paths
 
       if downloaded_archive_paths.count.zero?
         raise "Download failed"
@@ -73,8 +79,12 @@ module Gtt
       downloaded_archive_paths[0]
     end
 
-    def archive_paths
-      Dir.glob(File.expand_path('~/Downloads/archive*.zip'))
+    def archive_paths(filename = nil)
+      if filename
+        Dir.glob(File.join(File.expand_path("~/Downloads/"), "#{filename}*"))
+      else
+        Dir.glob(File.expand_path('~/Downloads/archive*.zip'))
+      end
     end
 
     def gtt_driver
