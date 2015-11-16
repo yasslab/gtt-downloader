@@ -81,10 +81,14 @@ module Gtt
 
     def archive_paths(filename = nil)
       if filename
-        Dir.glob(File.join(File.expand_path("~/Downloads/"), "#{filename}*"))
+        Dir.glob(File.join(download_path, "#{filename}*"))
       else
-        Dir.glob(File.expand_path('~/Downloads/archive*.zip'))
+        Dir.glob(File.join(download_path, 'archive*.zip'))
       end
+    end
+
+    def download_path
+      File.expand_path('~/Downloads')
     end
 
     def gtt_driver
