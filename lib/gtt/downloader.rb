@@ -91,7 +91,8 @@ module Gtt
       session = Capybara::Session.new(gtt_driver)
       session.visit(::Gtt::URL)
       session.fill_in  'Email',  with: @email
-      session.click_on 'Next' if session.has_button? "Next"
+      session.click_on 'Next' if session.has_button? 'Next'
+      session.click_on '次へ' if session.has_button? '次へ'
       session.fill_in  'Passwd', with: @password
       session.click_on 'signIn'
       session
